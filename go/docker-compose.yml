@@ -1,0 +1,13 @@
+version: '3'
+services:
+  go_project:
+    build: 
+      context: .
+      target: dev
+    image: go_project:dev
+    volumes:
+      - ./:/go_project
+      - ~/.aws/credentials:/root/.aws/credentials
+      - ~/.ssh:/root/.ssh/
+    command: /bin/bash
+    working_dir: /go_project
