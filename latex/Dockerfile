@@ -5,8 +5,8 @@ FROM pandoc/latex:3.6.4.0-alpine as base
 ARG BUILD_DEP
 ARG RUN_DEP
 
-RUN apt-get update && \
-    apt-get install -y ${RUN_DEP}
+RUN apk update && \
+    apk add ${RUN_DEP}
 
 FROM base as dev
 
