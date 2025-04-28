@@ -29,7 +29,9 @@
                         "path": "zsh",
                         "args": ["-l"]
                     }
-                }
+                },
+                "latex-workshop.formatting.latex": "tex-fmt",
+                "latex-workshop.formatting.tex-fmt.path": "/root/.cargo/bin/tex-fmt"
             },
             // Add the IDs of extensions you want installed when the container is created.
             "extensions": [
