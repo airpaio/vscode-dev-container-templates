@@ -1,0 +1,13 @@
+version: '3'
+services:
+  latex_project:
+    build: 
+      context: .
+      target: dev
+    image: latex_project:dev
+    volumes:
+      - ./:/latex_project
+      - ~/.aws/credentials:/root/.aws/credentials
+      - ~/.ssh:/root/.ssh/
+    command: /bin/bash
+    working_dir: /latex_project
