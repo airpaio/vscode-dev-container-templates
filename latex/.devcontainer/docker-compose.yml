@@ -34,4 +34,7 @@ services:
     #   - seccomp:unconfined
 
     # Overrides default command so things don't shut down after the process ends.
-    command: /bin/sh -c "while sleep 1000; do :; done"
+    # Explicitly override the entrypoint to prevent conflicts with base image
+    entrypoint: ["sleep"] # Set entrypoint to just the sleep command
+    # Command to run with that entrypoint
+    command: ["infinity"] # sleep infinity keeps the container running
