@@ -1,0 +1,13 @@
+version: '3'
+services:
+  rust_project:
+    build:
+      context: .
+      target: dev
+    image: rust_project:dev
+    volumes:
+      - ./:/rust_project
+      - ~/.aws/credentials:/root/.aws/credentials
+      - ~/.ssh:/root/.ssh/
+    command: /bin/bash
+    working_dir: /rust_project
